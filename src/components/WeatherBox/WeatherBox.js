@@ -9,7 +9,15 @@ const WeatherBox = (props) => {
 
     fetch(url)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        const weatherData = {
+          city: data.name,
+          temp: data.main.temp,
+          icon: data.weather[0].icon,
+          description: data.weather[0].main,
+        };
+        console.log(weatherData);
+      });
   });
 
   return (
