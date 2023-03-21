@@ -23,12 +23,10 @@ const WeatherBox = (props) => {
       });
   });
 
- 
-
   return (
     <section>
       <PickCity action={handleCityName} />
-      <WeatherSummary />
+      <WeatherSummary {...weatherData} />
       <Loader />
     </section>
   );
