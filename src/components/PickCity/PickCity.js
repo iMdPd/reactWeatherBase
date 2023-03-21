@@ -10,6 +10,7 @@ const PickCity = ({ action }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     action(city);
+    setCity("");
   };
 
   return (
