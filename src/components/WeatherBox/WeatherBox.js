@@ -31,13 +31,13 @@ const WeatherBox = (props) => {
         setError(true);
       }
     });
-  });
+  }, []);
 
   return (
     <section>
       <PickCity action={handleCityName} />
       {weatherData && pending === false && <WeatherSummary {...weatherData} />}
-      {error === true && <ErrorBox>Country doesn't exist</ErrorBox>}
+      {error === true && <ErrorBox>City doesn't exist</ErrorBox>}
       {pending === true && error === false && weatherData && <Loader />}
     </section>
   );
